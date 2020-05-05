@@ -1,7 +1,17 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(0, 0, 139, 0.3);
+}
 .wrapper {
-	max-width: 500px;
+	max-width: 1200px;
 	padding: 0 10px;
 	text-align: center;
+}
+
+.top{
+	margin-top: 5%; 
 }
 
 button {
@@ -15,4 +25,29 @@ button a {
 	text-decoration: none;
 	color: #fff;
 	text-align: center;
+}
+.slider__head {
+	padding-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+}
+.slider__items {
+    width: 100%;
+}
+.slider__img {
+    display: none;
+}
+.slider__items>figure{
+	margin:0;
+}
+.slider__items>figure.visible>img {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    margin: 0px auto;
+    width: 100%;
+}
+.bg{
+	background-color: rgba(0, 0, 139, 0.7);
 }

@@ -3,10 +3,68 @@
 <head>
     <title>Birthday</title>
     <link rel="stylesheet" type="text/css" href="./index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper top">
         <button><a href="./birthday.html">Куттуктоо</a></button>
     </div>
+    <section>
+        <div class="wrapper bg">
+            <h2 class="slider__head"><]:)</h2>
+            <div class="slider__items" id="slider">
+                <figure class="visible">
+                    <img src="./img1.jpg" alt="test image1" class="slider__img">
+                </figure>
+                <figure class=" hidden">
+                    <img src="./img2.jpg" alt="test image2" class="slider__img">
+                </figure>
+                <figure class=" hidden">
+                    <img src="./img3.jpg" alt="test image3" class="slider__img">
+                </figure>
+                <figure class=" hidden">
+                    <img src="./img4.jpg" alt="test image4" class="slider__img">
+                </figure>
+                <figure class=" hidden">
+                    <img src="./img5.jpg" alt="test image5" class="slider__img">
+                </figure>
+                <figure class=" hidden">
+                    <img src="./img6.jpg" alt="test image6" class="slider__img">
+                </figure>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        let slideInterval = 5000;
+
+        function getFigures() {
+        return document.getElementById('slider').getElementsByTagName('figure');
+        }
+
+        function moveForward() {
+        let pointer =0;
+        let figures = getFigures();
+        for (var i = 0; i < figures.length; i++) {
+            if (figures[i].className == 'visible') {
+                figures[i].className = '';
+                pointer = i;
+            }
+        }
+
+        if (++pointer == figures.length) {
+            pointer = 0;
+
+        }
+        figures[pointer].className = 'visible';
+        setTimeout(moveForward, slideInterval);
+
+        }
+
+        function startPlayback() {
+        setTimeout(moveForward, slideInterval);
+        }
+
+        startPlayback();
+    </script>
 </body>
 </html>
